@@ -1,0 +1,35 @@
+Method                      Description
+charAt(index)               Returns the character at the specified index.
+charCodeAt(index)           Returns the Unicode value of the character at the 
+                            specified index.
+concat(str1, str2, ...)     Joins two or more strings and returns a copy of the
+                            joined strings.
+fromCharCode()              Converts Unicode values to actual characters.
+indexOf(subString)          Returns the position of the first occurence of a 
+                            specified subString value. Returns -1 if the 
+                            substring is not found.
+lastIndexOf(subString)      Returns the position of the last occurence of a 
+                            specified subString value. Returns -1 if the 
+                            substring is not found.
+match(regex)                Searches the string and returns all matches to the 
+                            regular expression.
+replace(subString/regex,    Searches the string for a match of the substring
+  replacementString)        or regular expression and replaces the 
+                            matched substring with a new substring.
+search(regex)               Searches the string, based on the 
+                            regular expression, and returns the  position of the
+                            first match.
+slice(start, end)           Returns a new string that has the portion of the 
+                            string between the start and end positions removed.
+split(sep, limit)           Splits a string into an array of substrings,
+                            based on a separator character or regular 
+                            expression. The optional limit argument defines the 
+                            maximum number of splits to make, starting from the beginning.
+substr(start,length)        Extracts the characters from a string, 
+                            beginning at a specified start position, and through
+                            the specified length of characters.
+substring(from, to)         Returns a substring of characters between the 
+                            from and to index.
+toLowerCase()               Converts the string to lowercase.
+toUpperCase()               Converts the string to uppercase.
+valueOf()                   Returns the primitive string value.

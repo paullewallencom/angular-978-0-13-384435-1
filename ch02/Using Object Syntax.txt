@@ -1,0 +1,17 @@
+var x = new Number("5");
+
+var s = myObj.name;
+myObj.name = "New Name";
+
+var name = myObj.getName();
+myObj.getName = function() {return this.name;};
+
+var obj = {
+    name: "My Object",
+    value: 7,
+    getValue: function() { return this.name; };
+};
+
+var propName = "User Name";
+var val1 = myObj[propName];
+var val2 = myObj["Other Name"];
