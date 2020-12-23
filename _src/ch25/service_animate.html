@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS $animate Service</title>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="/css/animate.css">
+</head>
+<body>
+    <div ng-controller="myController">
+        <h3>Image Aniamtion:</h3>
+        <input type="button" ng-click="myImgClass='fadeOut'" value="Fade Out"/>
+        <input type="button" ng-click="myImageClass=''" value="Fade In"/>
+        <input type="button" ng-click="myImageClass='shrink'" value="Small"/>
+        <input type="button" ng-click="myImageClass=''" value="Big"/>
+        <hr>
+        <img ng-class="myImgClass" src="/images/arch.jpg" />
+    </div>
+    <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+    <script src="http://code.angulatjs.org/1.2.9/angulat-animate.min.js"></script>
+    <script src="/js/service_animate.js"></script>
+</body>
+</html>

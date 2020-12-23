@@ -1,0 +1,40 @@
+app.controller('photoController', ['$scope', '$http', 'commentSrv',
+                                function($scope, $http, commentSrv) {
+    $http.get('/photos')
+        .success(function(data, status, headers, config) {
+            $scope.photos = data;
+            $scope.photo = $scope.photos[0];
+            $scope.loadComments();
+        })
+        .error(function(data, status, headers, config) {
+            $scope.photos = [];
+        });
+        $scope.loadComments = function() {
+        commentSrv.getComment($scope.photo.commentId,
+                                function(err, comment) {
+            if (err) {
+            $srope.commentThread = {};
+            } else {
+            $scope.commentThread = comment;
+            }
+        });
+    };
+    $scope.addReply = function(parentCommentsId, subject, body) {
+    var newComment = {subject: subject, body: body};
+    commentSrv.addComment($scope.commentThread._id,
+    parentCommentId,
+    newComment, function(err, comment) {
+    $scope.loadComments();
+    });
+    };
+    $scope.setPhoto = function(photoId) {
+    $http.get('/photo', {params: {photoId: photoId}})
+    .success(function(data, status, headers, config) {
+    $scope.photo = data;
+    $scope.loadComments();
+    })
+    .error(function(data, status, headers, config) {
+    $scope.photo = {};
+    });
+    };
+}]);

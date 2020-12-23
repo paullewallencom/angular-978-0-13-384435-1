@@ -1,0 +1,19 @@
+exports.deleteUser = function(req, res) {
+    User.findOne({_id: req.session.user})
+    .exec(function(err, user) {
+        if (user) {
+            user.remove(function(err) {
+                if (err) {
+                    req.session.msg = err;
+                }
+                req.session.destroy(function() {
+                    res.redirect('/login');
+                });
+            });
+        } else {
+            req.session.msg = "User Not Found!";
+            req.session.destroy(function() {
+                res.redirect('/login');
+            });
+        }
+    });

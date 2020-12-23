@@ -1,0 +1,12 @@
+Escape  Description         Example                     Output String
+
+\'      Single quote mark   "couldn\'t be"              couldn't be
+\"      Double quote mark   "I \"think\" I \"am\""      I "think" I "am"
+\\      Backslash           "one\\two\\three"           one\two\three
+\n      New line            "I am\nI said"              I am
+                                                        I said
+\r      Carriage return     "to be\ror not"             to be
+                                                        or not
+\t      Tab                 "one\ttwo\tthree"           one two three
+\b      Backspace           "correctoin\b\b\bion"       correction
+\f      Form feed           "Title A\fTitle B"          Title A then Title B

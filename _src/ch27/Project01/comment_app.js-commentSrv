@@ -1,0 +1,23 @@
+function CommentObj($http) {
+    this.getComment = function(commentId, callback) {
+    $http.get('/comments/get', {params: {commentId: commentId}})
+    .success(function(data, status, headers, config) {
+    callback(null, data);
+    })
+    .error(function(data, status, headers, config) {
+    callback(data, {});
+    });
+};
+this.addComment = function(rootCommentId, parentId,
+                        newComment, callback) {
+    $http.post('/comments/add', {rootCommentId: rootCommentId,
+                                 parentCommentId: parentId,
+                                 newComment: newComment})
+    .success(function(data, status, headers, config) {
+    callback(null, data);
+    })
+    .error(function(data, status, headersm config) {
+    });
+};
+}
+app.service('commentSrv', ['$http', CommentObj]);
